@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/blob/main/LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/dominikoetiker/ArchLinuxInstaller)](https://github.com/dominikoetiker/ArchLinuxInstaller/issues)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/tree/v1.0.0)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/tree/v1.0.1)
 
 This Bash script automates the installation of Arch Linux by performing various steps involved in the setup process. It covers keymap loading, boot mode verification, internet connection check, system clock update, disk partitioning, filesystem formatting, mounting, mirror selection, essential package installation, fstab generation, timezone and localization setup, network configuration, initramfs creation, root password setting, and bootloader installation.
 

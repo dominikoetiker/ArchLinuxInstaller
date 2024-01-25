@@ -1,4 +1,4 @@
-CONFIGNAME		Lenovo ThinkPad T14
+CONFIGNAME		Name of my system configuration
 
 [OPTIONAL_VARIABLES]
 VARIABLE		VALUE

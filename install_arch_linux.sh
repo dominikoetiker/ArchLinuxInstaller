@@ -42,9 +42,8 @@
 #
 #===============================================================================
 
-#REUSABLE FUNCTIONS#############################################################
 abort() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# output error message and exit programm
 	#-----------------------------------------------------------------------
 	if [[ "$PRINT_OUTPUT_LOGFILE" == "true" ]]; then
@@ -56,14 +55,14 @@ abort() {
 }
 
 abortquietly() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# exit programm
 	#-----------------------------------------------------------------------
 	exit "$1"
 }
 
 col() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# get the elements of a column
 	# input: $1 is the section, where to find the elements
 	# input: $2 is the header of the column
@@ -73,7 +72,7 @@ col() {
 }
 
 colnr() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# get the number of a column
 	# input: $1 is the section ("VARIABLES", "PARTITIONS" or "LVM")
 	# input: $2 is the searchstring ("NAME", "SIZE", etc)
@@ -83,7 +82,7 @@ colnr() {
 }
 
 format() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# formats partitions or logical volumes with filesystems
 	# input: $1 is the searchname for the target
 	# input: $2 is the range of the target
@@ -110,7 +109,7 @@ format() {
 }
 
 mainsteptitle() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# outputs title of main steps including the url to the step in the installation guide
 	#-----------------------------------------------------------------------
 	printline "-"
@@ -125,7 +124,7 @@ mainsteptitle() {
 }
 
 printline() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prints a line full of one character / symbol
 	# prints line to stdout or logfile or both
 	#-----------------------------------------------------------------------
@@ -139,7 +138,7 @@ printline() {
 }
 
 printlogstdout() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# outputs message or prevents output.
 	# messages are output to stdout or logfile or both
 	#-----------------------------------------------------------------------
@@ -152,7 +151,7 @@ printlogstdout() {
 }
 
 printstatus() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# outputs status message to end of the line with the command
 	# message is output to stdout or logfile or both or none
 	#-----------------------------------------------------------------------
@@ -168,7 +167,7 @@ printstatus() {
 }
 
 printurl() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# input $1 url
 	# output printed url to stdout or logfile or both or none
 	#-----------------------------------------------------------------------
@@ -181,7 +180,7 @@ printurl() {
 }
 
 rownr() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# get the row number
 	# input: $1 is the searchstring
 	# input: $2 is either "title", "start" or "end"
@@ -199,7 +198,7 @@ rownr() {
 }
 
 runcommand() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# handels running main commands.
 	# this includes to print out status messages, error messages and/or exit script
 	#-----------------------------------------------------------------------
@@ -228,7 +227,7 @@ runcommand() {
 }
 
 setpassphrase() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# sets a passphrase and stores it in a variable
 	#-----------------------------------------------------------------------
 	i=0
@@ -255,7 +254,7 @@ setpassphrase() {
 }
 
 substeptitle() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# outputs title of sub steps
 	#-----------------------------------------------------------------------
 	printline "."
@@ -265,7 +264,7 @@ substeptitle() {
 }
 
 usage() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prints message, how to correctly use options
 	#-----------------------------------------------------------------------
 	cat <<EOF
@@ -287,7 +286,7 @@ EOF
 }
 
 userinteractiontitle() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# outputs title for a interactive section to stdout
 	#-----------------------------------------------------------------------
 	printf -v USER_INTERACTION_TITLE '%s' "$1"
@@ -297,7 +296,7 @@ userinteractiontitle() {
 }
 
 value() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# get a value from configfile
 	# input: $1 is the searchstring
 	# input: $2 is the title of the column, where the searchstring shold be found
@@ -309,7 +308,7 @@ value() {
 }
 
 warning() {
-	# reusable function-----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prints a warning and let user decide what to do
 	#-----------------------------------------------------------------------
 	if [[ "$PRINT_OUTPUT_LOGFILE" == "true" ]]; then
@@ -328,9 +327,8 @@ warning() {
 	fi
 }
 
-#VARIABLES AND ARRAYS FUNCTIONS#################################################
 setmetavariables() {
-	# variables and arrays function-----------------------------------------
+	#-----------------------------------------------------------------------
 	# set the meta variables for this script
 	#-----------------------------------------------------------------------
 	#  - ${PRINT_OUTPUT_LOGFILE} condition whether the output is logged or not (true/false)
@@ -372,7 +370,7 @@ setmetavariables() {
 }
 
 setvariables() {
-	# variables and arrays function-----------------------------------------
+	#-----------------------------------------------------------------------
 	# set the variables
 	#-----------------------------------------------------------------------
 	#  - ${CONFIGFILE} file name of the config file, that should be used
@@ -470,7 +468,7 @@ setvariables() {
 }
 
 setarrays() {
-	# variables and arrays function-----------------------------------------
+	#-----------------------------------------------------------------------
 	# set the arrays
 	#-----------------------------------------------------------------------
 	#  - ${partitionsnames[@]} list of all partitions
@@ -491,9 +489,8 @@ setarrays() {
 	microcodepackages=($(col "MICROCODEPACKAGES" "PACKAGE"))
 }
 
-#SUB STEPS FUNCTIONS############################################################
 greeting() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prints a nice greeting to stdout, logfile, both or none
 	#-----------------------------------------------------------------------
 	EXEC_DATE=$(date)
@@ -524,7 +521,7 @@ greeting() {
 }
 
 preparingdisk() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the disks:
 	#  - partition the disk
 	#  - create and open luks encrypted container
@@ -553,7 +550,7 @@ preparingdisk() {
 }
 
 preparinglogicalvolumes1() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the logical volumes
 	#  - creates a physical volume
 	#  - create a volume group
@@ -575,7 +572,7 @@ preparinglogicalvolumes1() {
 }
 
 preparinglogicalvolumes2() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the logical volumes
 	#  - formats the logical volumes with filesystems
 	#-----------------------------------------------------------------------
@@ -586,7 +583,7 @@ preparinglogicalvolumes2() {
 }
 
 preparingbootpart1() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the boot partition
 	#  - formats the boot partition with filesystem
 	#-----------------------------------------------------------------------
@@ -595,7 +592,7 @@ preparingbootpart1() {
 }
 
 preparinglogicalvolumes3() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the logical volumes
 	#  - mount the filesystems on the logical volumes
 	#-----------------------------------------------------------------------
@@ -615,7 +612,7 @@ preparinglogicalvolumes3() {
 }
 
 preparingbootpart2() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# prepares the boot partition
 	#  - mounts the filesystem on the boot partition
 	#-----------------------------------------------------------------------
@@ -624,7 +621,7 @@ preparingbootpart2() {
 }
 
 localhostnameresolution() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# configuring the hosts file
 	# makes sure, that software, that still reads from /etc/hosts, can resolve the local hostname and localhost
 	#-----------------------------------------------------------------------
@@ -635,7 +632,7 @@ localhostnameresolution() {
 }
 
 rundhcpcd() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# start the dhcpcd deamon for all network interfaces
 	#-----------------------------------------------------------------------
 	substeptitle "(Network configuration#DHCP: dhcpcd:) 2.Running" "https://wiki.archlinux.org/title/Dhcpcd#Running"
@@ -643,7 +640,7 @@ rundhcpcd() {
 }
 
 configuringmkinitcpio() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# add the keyboard, keymap, encrypt and lvm2 hooks to mkinitcpio.conf
 	#-----------------------------------------------------------------------
 	substeptitle "(dm-crypt/Encrypting an entire system:) 3.4 Configuring mkinitcpio" "https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio_2"
@@ -651,7 +648,7 @@ configuringmkinitcpio() {
 }
 
 grubinstallation() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# installs the grub boot loader
 	#-----------------------------------------------------------------------
 	substeptitle "(Arch boot process: 3 Boot loader: GRUB:) 2.1 Installation" "https://wiki.archlinux.org/title/GRUB#Installation_2"
@@ -662,7 +659,7 @@ grubinstallation() {
 }
 
 microcodeinstallation() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# installs the microcode-tool
 	#-----------------------------------------------------------------------
 	substeptitle "(Microcode:) 1.1 Installation" "https://wiki.archlinux.org/title/Microcode#Installation"
@@ -672,7 +669,7 @@ microcodeinstallation() {
 }
 
 grubconfiguration() {
-	# sub steps function----------------------------------------------------
+	#-----------------------------------------------------------------------
 	# configures grub to work with encrypted disk
 	#-----------------------------------------------------------------------
 	substeptitle "(dm-crypt/Encrypting an entire system:) 3.5 Configuring the boot loader" "https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#Configuring_the_boot_loader_2"
@@ -680,9 +677,9 @@ grubconfiguration() {
 	runcommand "$(arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null)" "arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null"
 }
 
-#MAIN STEPS FUNCTIONS###########################################################
+#MAIN STEPS ####################################################################
 prep() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# load data to prepare the installation process
 	#-----------------------------------------------------------------------
 	setmetavariables
@@ -695,7 +692,7 @@ prep() {
 }
 
 loadkeymap() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# load the keymap
 	#-----------------------------------------------------------------------
 	mainsteptitle "1.5 Set the console keyboard layout" "https://wiki.archlinux.org/title/Installation_guide#Set_the_console_keyboard_layout"
@@ -703,7 +700,7 @@ loadkeymap() {
 }
 
 verifybootmode() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# verify the boot mode
 	# exit, if boot mode is not UEFI
 	#-----------------------------------------------------------------------
@@ -712,7 +709,7 @@ verifybootmode() {
 }
 
 checkinternetconnection() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# check internetconnection
 	# exit, if there is no working internet connection
 	#-----------------------------------------------------------------------
@@ -721,7 +718,7 @@ checkinternetconnection() {
 }
 
 updatesystemclock() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# update the system clock
 	# ensures, the system clock is accurate
 	#-----------------------------------------------------------------------
@@ -730,7 +727,7 @@ updatesystemclock() {
 }
 
 partitiondisks() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# partitions the disk
 	# prepares logical volumes I
 	#-----------------------------------------------------------------------
@@ -741,7 +738,7 @@ partitiondisks() {
 }
 
 formatpartitions() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# formats the partitions and logical volumes
 	#-----------------------------------------------------------------------
 	mainsteptitle "1.10 Format the partitions" "https://wiki.archlinux.org/title/Installation_guide#Format_the_partitions"
@@ -750,7 +747,7 @@ formatpartitions() {
 }
 
 mountfilesystems() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# mount the filesystems on the partitions and logical volumes
 	#-----------------------------------------------------------------------
 	mainsteptitle "1.11 Mount the file systems" "https://wiki.archlinux.org/title/Installation_guide#Mount_the_file_systems"
@@ -759,7 +756,7 @@ mountfilesystems() {
 }
 
 selectmirrors() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# change the mirrorlist using the reflector command
 	#-----------------------------------------------------------------------
 	mainsteptitle "2.1 Select the mirrors" "https://wiki.archlinux.org/title/Installation_guide#Select_the_mirrors"
@@ -769,7 +766,7 @@ selectmirrors() {
 }
 
 installessentialpackages() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# installs the essential packages to the mounted filesystem
 	#-----------------------------------------------------------------------
 	mainsteptitle "2.2 Install essential packages" "https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages"
@@ -779,7 +776,7 @@ installessentialpackages() {
 }
 
 fstab() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# generate an fstab file
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.1 Fstab" "https://wiki.archlinux.org/title/Installation_guide#Fstab"
@@ -787,7 +784,7 @@ fstab() {
 }
 
 chrootintoarch() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# explains in output, why this step won't be integrated in this script
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.2 Chroot" "https://wiki.archlinux.org/title/Installation_guide#Chroot"
@@ -798,7 +795,7 @@ chrootintoarch() {
 }
 
 timezone() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# sets the time zone and generates /etc/adjtime
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.3 Time zone" "https://wiki.archlinux.org/title/Installation_guide#Time_zone"
@@ -807,7 +804,7 @@ timezone() {
 }
 
 localization() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# setup the locales
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.4 Localization" "https://wiki.archlinux.org/title/Installation_guide#Localization"
@@ -824,7 +821,7 @@ localization() {
 }
 
 networkconfig() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# create the hostname and complete the network configuration
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.5 Network configuration" "https://wiki.archlinux.org/title/Installation_guide#Network_configuration"
@@ -834,7 +831,7 @@ networkconfig() {
 }
 
 initramfs() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# create the initramfs
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.6 Initramfs" "https://wiki.archlinux.org/title/Installation_guide#Initramfs"
@@ -843,7 +840,7 @@ initramfs() {
 }
 
 rootpassword() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# sets the root password
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.7 Root password" "https://wiki.archlinux.org/title/Installation_guide#Root_password"
@@ -853,7 +850,7 @@ rootpassword() {
 }
 
 bootloader() {
-	# main steps function---------------------------------------------------
+	#-----------------------------------------------------------------------
 	# install and setup the boot loader and enable microcode
 	#-----------------------------------------------------------------------
 	mainsteptitle "3.8 Boot loader" "https://wiki.archlinux.org/title/Installation_guide#Boot_loader"
@@ -864,7 +861,7 @@ bootloader() {
 
 #MAIN ##########################################################################
 main() {
-	# main function---------------------------------------------------------
+	#-----------------------------------------------------------------------
 	# installs arch linux step by step
 	#-----------------------------------------------------------------------
 	prep

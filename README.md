@@ -163,7 +163,7 @@ I welcome contributions! If you find any issues, have suggestions, or want to co
 3. Fork the repository and create a new branch for your contribution.
 4. Submit a pull request with your changes.
 
-Please read my [Contribution Guidelines](CONTRIBUTING.md) for more details.
+Please read my [Contribution Guidelines](CONTRIBUTE.md) for more details.
 
 ## License
 

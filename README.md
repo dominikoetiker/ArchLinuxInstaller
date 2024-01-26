@@ -7,6 +7,7 @@
 
 ## About the Script
 
+![Outdated](https://img.shields.io/badge/status-outdated-red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/blob/main/LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/dominikoetiker/ArchLinuxInstaller)](https://github.com/dominikoetiker/ArchLinuxInstaller/issues)
 [![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/tree/v0.0.1)

@@ -1,44 +1,50 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE: install_arch_linux.sh
+# Important Notice: This script is **outdated** and should not be used for new installations.
+#                   It was last updated in April 2022 and may not be compatible with the latest
+#                   version of Arch Linux. For a safe and up-to-date installation, please follow
+#                   the official Arch Linux installation instructions:
+#                   https://wiki.archlinux.org/title/Installation_guide
 #
-#         USAGE: ./install_arch_linux.sh [-hvlr] [-L logfile] [-c configfile] [-d device]
+#             FILE: install_arch_linux.sh
 #
-#   DESCRIPTION: Bash script for installing Arch Linux. This script follows the
-#                Arch Linux installation guide (https://wiki.archlinux.org).
+#            USAGE: ./install_arch_linux.sh [-hvlr] [-L logfile] [-c configfile] [-d device]
 #
-#       OPTIONS:
-#                  -h               prints this help menu to stdout
-#                  -v               prints detailed output to stdout
-#                  -l               prints detailed output to logfile (standard logfile)
-#                  -L <logfile>     prints detailed output to logfile <filename>
-#                  -r               if -l or -L is selected and the logfile allready exists,
-#                                   the existing logfile will be removed (standard is to append
-#                                   to existing logfile)
-#                  -c <configfile>  preselect a configfile (standard is a select menu)
-#                  -d <device>      preselect a target disk <device>
+#      DESCRIPTION: Bash script for installing Arch Linux. This script follows the
+#                   Arch Linux installation guide (https://wiki.archlinux.org).
 #
-#  REQUIREMENTS: This script assumes familiarity with Arch Linux installation
-#                and requires an active internet connection. Read the README.md for more information.
+#          OPTIONS:
+#                     -h               prints this help menu to stdout
+#                     -v               prints detailed output to stdout
+#                     -l               prints detailed output to logfile (standard logfile)
+#                     -L <logfile>     prints detailed output to logfile <filename>
+#                     -r               if -l or -L is selected and the logfile allready exists,
+#                                      the existing logfile will be removed (standard is to append
+#                                      to existing logfile)
+#                     -c <configfile>  preselect a configfile (standard is a select menu)
+#                     -d <device>      preselect a target disk <device>
 #
-#       WARNING: Disk Encryption and Data Deletion: This script will encrypt the
-#                target disk, and all existing data on the disk will be permanently
-#                deleted during the installation process. Ensure you have backed up
-#                any important data before running the script.
+#     REQUIREMENTS: This script assumes familiarity with Arch Linux installation
+#                   and requires an active internet connection. Read the README.md for more information.
 #
-#                Be careful and make sure you know what you are doing. This script
-#                and the configuration file do not replace reading and understanding
-#                the official documentation.
+#          WARNING: Disk Encryption and Data Deletion: This script will encrypt the
+#                   target disk, and all existing data on the disk will be permanently
+#                   deleted during the installation process. Ensure you have backed up
+#                   any important data before running the script.
 #
-# DOCUMENTATION: For more detailed information, please refer to the README.md:
-#                https://github.com/dominikoetiker/ArchLinuxInstaller/blob/main/README.md
+#                   Be careful and make sure you know what you are doing. This script
+#                   and the configuration file do not replace reading and understanding
+#                   the official documentation.
+#
+#    DOCUMENTATION: For more detailed information, please refer to the README.md:
+#                   https://github.com/dominikoetiker/ArchLinuxInstaller/blob/main/README.md
 #
 #
-#        AUTHOR: Dominik Oetiker
-#       CREATED: April 27, 2022
-#       LICENSE: MIT
-#    REPOSITORY: https://github.com/dominikoetiker/ArchLinuxInstaller
+#           AUTHOR: Dominik Oetiker
+#          CREATED: April 27, 2022
+#          LICENSE: MIT
+#       REPOSITORY: https://github.com/dominikoetiker/ArchLinuxInstaller
 #
 #===============================================================================
 

@@ -1,5 +1,12 @@
 # Arch Linux Installation Script
 
+## ⚠️ Important Notice
+
+- **WARNING:** This script is outdated and should not be used for new installations. It was last updated in April 2022 and may not be compatible with the latest version of Arch Linux. For a safe and up-to-date installation, please follow the official Arch Linux installation instructions: [Installation guide](https://wiki.archlinux.org/title/Installation_guide)
+- **Opportunity to Contribute:** If you're familiar with the latest installation process for Arch Linux, consider contributing to update this script. Pull requests are welcome!
+
+## About the Script
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/blob/main/LICENSE)
 [![GitHub Issues](https://img.shields.io/github/issues/dominikoetiker/ArchLinuxInstaller)](https://github.com/dominikoetiker/ArchLinuxInstaller/issues)
 [![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/dominikoetiker/ArchLinuxInstaller/tree/v0.0.1)
@@ -11,6 +18,8 @@ But the most important thing: It creates a full-disk encryption installation.
 ## Table of Contents
 
 - [Arch Linux Installation Script](#arch-linux-installation-script)
+  - [⚠️ Important Notice](#️-important-notice)
+  - [About the Script](#about-the-script)
   - [Table of Contents](#table-of-contents)
   - [Why Use This Script?](#why-use-this-script)
   - [Warning](#warning)
@@ -164,6 +173,11 @@ I welcome contributions! If you find any issues, have suggestions, or want to co
 4. Submit a pull request with your changes.
 
 Please read my [Contribution Guidelines](CONTRIBUTE.md) for more details.
+
+**Opportunity to Contribute:**
+
+- If you're familiar with the latest installation process for Arch Linux, consider contributing to update this script (See [⚠️ Important Notice](#️-important-notice)). Pull requests are welcome!
+- Try another approach: Use JSON format for the config file. Pull requests are welcome!
 
 ## License
 
